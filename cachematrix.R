@@ -6,7 +6,16 @@
 ## Nigel updating the fork
 
 makeCacheMatrix <- function(x = matrix()) {
-
+  myInv <- NULL
+  set <- function(y) {
+    x <<- y
+    myInv <<- NULL
+  }
+  get <- function() x
+  setInv <- function(newInverse) myInv <<- newInverse
+  getInv <- function() myInv
+  #no clue what this next line means
+  list(set = set, get = get,setInv = setInv, getInv = getInv)
 }
 
 
